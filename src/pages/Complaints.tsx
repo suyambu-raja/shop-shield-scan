@@ -108,22 +108,22 @@ export default function Complaints() {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="p-4 sm:p-6 max-w-7xl mx-auto space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
         <div>
-          <h1 className="text-3xl font-bold">Complaints Management</h1>
-          <p className="text-muted-foreground">Track and manage product compliance complaints</p>
+          <h1 className="text-2xl sm:text-3xl font-bold">Complaints Management</h1>
+          <p className="text-muted-foreground text-sm sm:text-base">Track and manage product compliance complaints</p>
         </div>
         
         <Dialog>
           <DialogTrigger asChild>
-            <Button>
+            <Button size="sm" className="sm:size-default w-full sm:w-auto">
               <Plus className="h-4 w-4 mr-2" />
               File Complaint
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[500px]">
+          <DialogContent className="sm:max-w-[500px] mx-4 sm:mx-auto">
             <DialogHeader>
               <DialogTitle>File New Complaint</DialogTitle>
               <DialogDescription>
@@ -200,39 +200,42 @@ export default function Complaints() {
       {/* Filters */}
       <Card>
         <CardContent className="pt-6">
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1 min-w-[200px]">
               <div className="relative">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input placeholder="Search complaints..." className="pl-8" />
               </div>
             </div>
-            <Select>
-              <SelectTrigger className="w-[150px]">
-                <SelectValue placeholder="Status" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Status</SelectItem>
-                <SelectItem value="pending">Pending</SelectItem>
-                <SelectItem value="investigating">Investigating</SelectItem>
-                <SelectItem value="resolved">Resolved</SelectItem>
-              </SelectContent>
-            </Select>
-            <Select>
-              <SelectTrigger className="w-[150px]">
-                <SelectValue placeholder="Severity" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Severity</SelectItem>
-                <SelectItem value="high">High</SelectItem>
-                <SelectItem value="medium">Medium</SelectItem>
-                <SelectItem value="low">Low</SelectItem>
-              </SelectContent>
-            </Select>
-            <Button variant="outline">
-              <Filter className="h-4 w-4 mr-2" />
-              More Filters
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+              <Select>
+                <SelectTrigger className="w-full sm:w-[150px]">
+                  <SelectValue placeholder="Status" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Status</SelectItem>
+                  <SelectItem value="pending">Pending</SelectItem>
+                  <SelectItem value="investigating">Investigating</SelectItem>
+                  <SelectItem value="resolved">Resolved</SelectItem>
+                </SelectContent>
+              </Select>
+              <Select>
+                <SelectTrigger className="w-full sm:w-[150px]">
+                  <SelectValue placeholder="Severity" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Severity</SelectItem>
+                  <SelectItem value="high">High</SelectItem>
+                  <SelectItem value="medium">Medium</SelectItem>
+                  <SelectItem value="low">Low</SelectItem>
+                </SelectContent>
+              </Select>
+              <Button variant="outline" size="sm" className="sm:size-default">
+                <Filter className="h-4 w-4 mr-2" />
+                <span className="hidden sm:inline">More Filters</span>
+                <span className="sm:hidden">Filters</span>
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>
@@ -243,10 +246,10 @@ export default function Complaints() {
           const StatusIcon = getStatusIcon(complaint.status);
           return (
             <Card key={complaint.id}>
-              <CardContent className="pt-6">
-                <div className="flex items-start justify-between">
+              <CardContent className="pt-4 sm:pt-6">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-4 lg:space-y-0">
                   <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-2">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="font-medium text-sm text-muted-foreground">#{complaint.id}</span>
                       <Badge className={getSeverityColor(complaint.severity)} variant="secondary">
                         {complaint.severity}
@@ -261,7 +264,7 @@ export default function Complaints() {
                     <p className="text-sm text-primary mb-2">{complaint.productName}</p>
                     <p className="text-sm text-muted-foreground mb-3">{complaint.description}</p>
                     
-                    <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center space-x-1">
                         <Calendar className="h-4 w-4" />
                         <span>{complaint.date}</span>
@@ -276,12 +279,12 @@ export default function Complaints() {
                     </div>
                   </div>
                   
-                  <div className="flex space-x-2 ml-4">
-                    <Button variant="outline" size="sm">
+                  <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 lg:ml-4">
+                    <Button variant="outline" size="sm" className="flex-1 sm:flex-none">
                       <Eye className="h-4 w-4 mr-2" />
                       View
                     </Button>
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" className="flex-1 sm:flex-none">
                       <MessageSquare className="h-4 w-4 mr-2" />
                       Reply
                     </Button>
@@ -294,7 +297,7 @@ export default function Complaints() {
       </div>
 
       {/* Statistics */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-2xl font-bold">47</div>

@@ -124,28 +124,28 @@ export default function Compliance() {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="p-4 sm:p-6 max-w-7xl mx-auto space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
         <div>
-          <h1 className="text-3xl font-bold">Compliance Monitoring</h1>
-          <p className="text-muted-foreground">Track product compliance across different categories</p>
+          <h1 className="text-2xl sm:text-3xl font-bold">Compliance Monitoring</h1>
+          <p className="text-muted-foreground text-sm sm:text-base">Track product compliance across different categories</p>
         </div>
-        <div className="flex space-x-2">
-          <Button variant="outline">Export Report</Button>
-          <Button>Run Compliance Check</Button>
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+          <Button variant="outline" size="sm" className="sm:size-default">Export Report</Button>
+          <Button size="sm" className="sm:size-default">Run Compliance Check</Button>
         </div>
       </div>
 
       {/* Overall Compliance Score */}
       <Card className="bg-gradient-to-r from-primary/10 to-success/10 border-primary/20">
-        <CardContent className="pt-6">
-          <div className="flex items-center justify-between">
+        <CardContent className="pt-4 sm:pt-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between space-y-4 lg:space-y-0">
             <div>
-              <h2 className="text-2xl font-bold mb-2">Overall Compliance Score</h2>
-              <div className="flex items-center space-x-4">
-                <div className="text-4xl font-bold text-success">92%</div>
-                <div className="text-muted-foreground">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">Overall Compliance Score</h2>
+              <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <div className="text-3xl sm:text-4xl font-bold text-success">92%</div>
+                <div className="text-muted-foreground text-sm sm:text-base">
                   <div>1,150 of 1,250 products compliant</div>
                   <div className="flex items-center mt-1">
                     <TrendingUp className="h-4 w-4 mr-1 text-success" />
@@ -154,33 +154,33 @@ export default function Compliance() {
                 </div>
               </div>
             </div>
-            <div className="flex space-x-8">
+            <div className="flex flex-row lg:flex-col xl:flex-row space-x-6 sm:space-x-8 lg:space-x-0 lg:space-y-4 xl:space-y-0 xl:space-x-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-success">1,150</div>
-                <div className="text-sm text-muted-foreground">Compliant</div>
+                <div className="text-xl sm:text-2xl font-bold text-success">1,150</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Compliant</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-warning">75</div>
-                <div className="text-sm text-muted-foreground">Minor Issues</div>
+                <div className="text-xl sm:text-2xl font-bold text-warning">75</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Minor Issues</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-error">25</div>
-                <div className="text-sm text-muted-foreground">Major Issues</div>
+                <div className="text-xl sm:text-2xl font-bold text-error">25</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Major Issues</div>
               </div>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      <Tabs defaultValue="categories" className="space-y-6">
-        <TabsList>
-          <TabsTrigger value="categories">Compliance Categories</TabsTrigger>
-          <TabsTrigger value="violations">Recent Violations</TabsTrigger>
-          <TabsTrigger value="trends">Trends & Analytics</TabsTrigger>
+      <Tabs defaultValue="categories" className="space-y-4 sm:space-y-6">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="categories" className="text-xs sm:text-sm">Categories</TabsTrigger>
+          <TabsTrigger value="violations" className="text-xs sm:text-sm">Violations</TabsTrigger>
+          <TabsTrigger value="trends" className="text-xs sm:text-sm">Analytics</TabsTrigger>
         </TabsList>
 
         <TabsContent value="categories">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             {complianceCategories.map((category, index) => (
               <Card key={index}>
                 <CardHeader>
@@ -265,7 +265,7 @@ export default function Compliance() {
         </TabsContent>
 
         <TabsContent value="trends">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <Card>
               <CardHeader>
                 <CardTitle>Compliance Trends</CardTitle>

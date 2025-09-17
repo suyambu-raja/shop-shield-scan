@@ -91,21 +91,21 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="p-4 sm:p-6 max-w-7xl mx-auto space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
         <div>
-          <h1 className="text-3xl font-bold">Compliance Dashboard</h1>
-          <p className="text-muted-foreground">Monitor product compliance and manage complaints</p>
+          <h1 className="text-2xl sm:text-3xl font-bold">Compliance Dashboard</h1>
+          <p className="text-muted-foreground text-sm sm:text-base">Monitor product compliance and manage complaints</p>
         </div>
-        <div className="flex space-x-2">
-          <Button variant="outline">Export Report</Button>
-          <Button>Scan Product</Button>
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+          <Button variant="outline" size="sm" className="sm:size-default">Export Report</Button>
+          <Button size="sm" className="sm:size-default">Scan Product</Button>
         </div>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {stats.map((stat, index) => (
           <Card key={index}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -125,7 +125,7 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Compliance Overview */}
         <Card>
           <CardHeader>
@@ -172,9 +172,9 @@ export default function Dashboard() {
           <CardContent>
             <div className="space-y-4">
               {recentComplaints.map((complaint) => (
-                <div key={complaint.id} className="flex items-center justify-between p-3 border rounded-lg">
+                <div key={complaint.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 border rounded-lg space-y-2 sm:space-y-0">
                   <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-1">
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 mb-1">
                       <span className="font-medium text-sm">{complaint.product}</span>
                       <Badge className={getSeverityColor(complaint.severity)} variant="secondary">
                         {complaint.severity}
@@ -203,7 +203,7 @@ export default function Dashboard() {
           <CardDescription>Common tasks and workflows</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <Button variant="outline" className="h-20 flex flex-col space-y-2">
               <Package className="h-6 w-6" />
               <span>Bulk Product Upload</span>

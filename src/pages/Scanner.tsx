@@ -75,14 +75,14 @@ export default function Scanner() {
   const complianceStatus = scanResult ? getComplianceStatus(scanResult.compliance.overall) : null;
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="p-4 sm:p-6 max-w-7xl mx-auto space-y-4 sm:space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold">Product Scanner</h1>
-        <p className="text-muted-foreground">Scan or search products to check compliance status</p>
+        <h1 className="text-2xl sm:text-3xl font-bold">Product Scanner</h1>
+        <p className="text-muted-foreground text-sm sm:text-base">Scan or search products to check compliance status</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Scanner Interface */}
         <Card>
           <CardHeader>
@@ -98,13 +98,14 @@ export default function Scanner() {
               </TabsList>
               
               <TabsContent value="camera" className="space-y-4">
-                <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
-                  <Camera className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                  <p className="text-muted-foreground mb-4">Position product barcode/QR code in camera frame</p>
+                <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-4 sm:p-8 text-center">
+                  <Camera className="h-10 sm:h-12 w-10 sm:w-12 mx-auto mb-4 text-muted-foreground" />
+                  <p className="text-muted-foreground mb-4 text-sm sm:text-base">Position product barcode/QR code in camera frame</p>
                   <Button 
                     onClick={handleScan} 
                     disabled={isScanning}
                     className="w-full"
+                    size="sm"
                   >
                     {isScanning ? "Scanning..." : "Start Camera Scan"}
                   </Button>
@@ -112,10 +113,10 @@ export default function Scanner() {
               </TabsContent>
               
               <TabsContent value="upload" className="space-y-4">
-                <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
-                  <Upload className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                  <p className="text-muted-foreground mb-4">Upload image containing barcode/QR code</p>
-                  <Button variant="outline" className="w-full">
+                <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-4 sm:p-8 text-center">
+                  <Upload className="h-10 sm:h-12 w-10 sm:w-12 mx-auto mb-4 text-muted-foreground" />
+                  <p className="text-muted-foreground mb-4 text-sm sm:text-base">Upload image containing barcode/QR code</p>
+                  <Button variant="outline" className="w-full" size="sm">
                     Choose Image
                   </Button>
                 </div>
@@ -169,7 +170,7 @@ export default function Scanner() {
                 <Separator />
 
                 {/* Product Details */}
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                   <div className="flex items-center space-x-2">
                     <DollarSign className="h-4 w-4 text-muted-foreground" />
                     <span className="text-muted-foreground">MRP:</span>
@@ -219,7 +220,7 @@ export default function Scanner() {
                   </div>
                 </div>
 
-                <div className="flex space-x-2 pt-4">
+                <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 pt-4">
                   <Button variant="destructive" size="sm" className="flex-1">
                     Report Issue
                   </Button>

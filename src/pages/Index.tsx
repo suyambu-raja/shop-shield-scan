@@ -76,26 +76,26 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
             AI-Powered Compliance Solution
           </Badge>
-          <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
             Automated Compliance & Complaint Checker
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Protect consumers and ensure e-commerce compliance with our AI-powered solution that automatically checks product declarations, handles complaints, and provides real-time alerts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/dashboard">
-              <Button size="lg" className="h-12 px-8">
+            <Link to="/dashboard" className="w-full sm:w-auto">
+              <Button size="lg" className="h-12 px-8 w-full sm:w-auto">
                 <Play className="h-5 w-5 mr-2" />
                 Get Started
               </Button>
             </Link>
-            <Link to="/scanner">
-              <Button size="lg" variant="outline" className="h-12 px-8">
+            <Link to="/scanner" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="h-12 px-8 w-full sm:w-auto">
                 <ScanLine className="h-5 w-5 mr-2" />
                 Try Scanner
               </Button>
@@ -105,9 +105,9 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-4">
@@ -130,7 +130,7 @@ const Index = () => {
               Everything you need to ensure product compliance and manage consumer complaints in one integrated platform.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {features.map((feature, index) => (
               <Card key={index} className="relative overflow-hidden">
                 <CardHeader>
@@ -157,23 +157,23 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/5">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-primary/5">
         <div className="max-w-4xl mx-auto text-center">
-          <AlertTriangle className="h-16 w-16 text-warning mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <AlertTriangle className="h-12 sm:h-16 w-12 sm:w-16 text-warning mx-auto mb-6" />
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
             Protect Your Customers Today
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8">
             Join thousands of e-commerce platforms using our compliance solution to ensure product safety and build consumer trust.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/dashboard">
-              <Button size="lg" className="h-12 px-8">
+            <Link to="/dashboard" className="w-full sm:w-auto">
+              <Button size="lg" className="h-12 px-8 w-full sm:w-auto">
                 Access Dashboard
               </Button>
             </Link>
-            <Link to="/complaints">
-              <Button size="lg" variant="outline" className="h-12 px-8">
+            <Link to="/complaints" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="h-12 px-8 w-full sm:w-auto">
                 View Complaints
               </Button>
             </Link>

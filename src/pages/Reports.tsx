@@ -110,16 +110,16 @@ export default function Reports() {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="p-4 sm:p-6 max-w-7xl mx-auto space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
         <div>
-          <h1 className="text-3xl font-bold">Reports & Analytics</h1>
-          <p className="text-muted-foreground">Generate and view compliance reports and analytics</p>
+          <h1 className="text-2xl sm:text-3xl font-bold">Reports & Analytics</h1>
+          <p className="text-muted-foreground text-sm sm:text-base">Generate and view compliance reports and analytics</p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
           <Select>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-full sm:w-[180px]">
               <SelectValue placeholder="Time Period" />
             </SelectTrigger>
             <SelectContent>
@@ -129,7 +129,7 @@ export default function Reports() {
               <SelectItem value="last-year">Last Year</SelectItem>
             </SelectContent>
           </Select>
-          <Button>
+          <Button size="sm" className="sm:size-default">
             <BarChart3 className="h-4 w-4 mr-2" />
             Generate Report
           </Button>
@@ -137,7 +137,7 @@ export default function Reports() {
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {analytics.map((metric, index) => {
           const TrendIcon = getTrendIcon(metric.trend);
           return (
@@ -159,15 +159,15 @@ export default function Reports() {
         })}
       </div>
 
-      <Tabs defaultValue="reports" className="space-y-6">
-        <TabsList>
-          <TabsTrigger value="reports">Available Reports</TabsTrigger>
-          <TabsTrigger value="analytics">Analytics Dashboard</TabsTrigger>
-          <TabsTrigger value="custom">Custom Reports</TabsTrigger>
+      <Tabs defaultValue="reports" className="space-y-4 sm:space-y-6">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="reports" className="text-xs sm:text-sm">Reports</TabsTrigger>
+          <TabsTrigger value="analytics" className="text-xs sm:text-sm">Analytics</TabsTrigger>
+          <TabsTrigger value="custom" className="text-xs sm:text-sm">Custom</TabsTrigger>
         </TabsList>
 
         <TabsContent value="reports">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             {reports.map((report, index) => (
               <Card key={index}>
                 <CardHeader>
@@ -214,7 +214,7 @@ export default function Reports() {
         </TabsContent>
 
         <TabsContent value="analytics">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <Card>
               <CardHeader>
                 <CardTitle>Top Compliance Violations</CardTitle>
@@ -351,7 +351,7 @@ export default function Reports() {
               <CardDescription>Generate tailored reports based on specific criteria</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-4">
                   <div>
                     <label className="text-sm font-medium">Report Type</label>

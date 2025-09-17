@@ -35,8 +35,8 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-primary" />
-            <span className="font-bold text-xl">ComplianceCheck</span>
+            <Shield className="h-6 sm:h-8 w-6 sm:w-8 text-primary" />
+            <span className="font-bold text-lg sm:text-xl">ComplianceCheck</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -58,15 +58,15 @@ export function Navigation() {
           </div>
 
           {/* User Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <Button variant="ghost" size="sm" className="relative">
               <Bell className="h-4 w-4" />
-              <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs">
+              <Badge className="absolute -top-1 -right-1 h-4 sm:h-5 w-4 sm:w-5 flex items-center justify-center p-0 text-xs">
                 3
               </Badge>
             </Button>
             
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="hidden sm:flex">
               <User className="h-4 w-4 mr-2" />
               Admin
             </Button>
