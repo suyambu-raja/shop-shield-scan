@@ -12,7 +12,8 @@ import {
   TrendingUp,
   AlertTriangle,
   ArrowRight,
-  Play
+  Play,
+  MessageCircle
 } from "lucide-react";
 
 const Index = () => {
@@ -34,6 +35,12 @@ const Index = () => {
       title: "Complaint Management",
       description: "Streamlined system for filing, tracking, and resolving product compliance complaints.",
       color: "text-warning"
+    },
+    {
+      icon: MessageCircle,
+      title: "AI Assistant Chatbot",
+      description: "Get instant help with compliance queries and automatically raise complaints through intelligent chat.",
+      color: "text-primary"
     },
     {
       icon: BarChart3,
@@ -130,7 +137,7 @@ const Index = () => {
               Everything you need to ensure product compliance and manage consumer complaints in one integrated platform.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => (
               <Card key={index} className="relative overflow-hidden">
                 <CardHeader>
